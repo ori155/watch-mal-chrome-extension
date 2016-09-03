@@ -1,0 +1,16 @@
+{
+  "name": "gogoamine-mal-plugin",
+  "version": "1.0.0",
+  "description": "A simple chrome extension which enable you to go to the anime in gogoanime via myanimelist website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome-extension",
+    "mal",
+    "gogoanime"
+  ],
+  "author": "Ori",
+  "license": "ISC"
+}
