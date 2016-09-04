@@ -1,0 +1,14 @@
+{
+	"manifest_version": 2,
+	"name": "watch-from-mal-chrome-extension",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+			"matches": ["https://myanimelist.net/anime/*/*"],
+			"js": ["content/inject_watch_button.js"]
+		}
+	],
+
+	"permissions": ["tabs"]
+
+}
