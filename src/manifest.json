@@ -10,6 +10,10 @@
 		}
 	],
 
-	"permissions": ["tabs"]
+	"permissions": [
+		"tabs",
+		"http://gogoanime.io/",
+		"https://gogoanime.io/"
+	]
 
 }
