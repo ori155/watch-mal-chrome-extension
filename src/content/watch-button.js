@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { autobind } from 'core-decorators';
 
 import '../vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css';
 
@@ -13,7 +14,8 @@ export class WatchButton extends React.Component {
 			available: true
 		};
 	}
-	handleClick = () => {
+	@autobind
+	handleClick() {
 		let title_node = document.getElementsByClassName("h1")[0];
 		let title = title_node.getElementsByTagName('span')[0]
 				      .innerText;
