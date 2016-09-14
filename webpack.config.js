@@ -2,8 +2,6 @@ const path = require('path');
 
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const babel_config = require('./webpack.babel.js');
-
 const src_dir = path.resolve(__dirname, "./src/");
 const vendor_dir = path.resolve(src_dir, "vendor/");
 
@@ -22,7 +20,6 @@ module.exports ={
 			include: src_dir,
 			exclude: vendor_dir,
 			loader: "babel-loader",
-			query: babel_config
 		},
 		{
 			test: /\.css$/,
