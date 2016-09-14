@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -36,7 +37,8 @@ module.exports ={
 	plugins: [
 		new CopyWebpackPlugin([
 			{ from: path.resolve(src_dir, 'manifest.json') }
-			])
+			]),
+		new webpack.optimize.UglifyJsPlugin()
 	]
 }
 
