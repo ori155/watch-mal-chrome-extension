@@ -8,22 +8,44 @@ import GoGoFetch from '../fetchers/gogoanime';
 
 
 export class WatchButton extends React.Component {
+
+	title;
+	last_watched_episode;
+
 	constructor(props) {
 		super(props);
+		
+		this.title = null;
+		this.last_watched_episode = null;
+		
 		this.state = {
-			available: true
+			available: false
 		};
 	}
+	
 	@autobind
-	handleClick() {
+	extract_info() {
 		let title_node = document.getElementsByClassName("h1")[0];
-		let title = title_node.getElementsByTagName('span')[0]
+		this.title = title_node.getElementsByTagName('span')[0]
 				      .innerText;
 		let episode = document
 			.getElementsByClassName('js-user-episode-seen')[0]
 			.value;
-		episode = +episode;
-		GoGoFetch.open_episode(title, episode + 1);
+		this.last_watched_episode = +episode;
+	}
+
+	@autobind
+	handleClick() {
+		GoGoFetch.open_episode(this.title, this.last_watched_episode + 1);
+	}
+
+	@autobind
+	componentWillMount() {
+		this.extract_info();
+		GoGoFetch.anime_exists(this.title)
+			.then( exists => this.setState({
+						 available: exists
+							}));
 	}
 	render() {
 		return (

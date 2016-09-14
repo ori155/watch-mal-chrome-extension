@@ -36,5 +36,9 @@ export default class GoGoFetch {
 				this.episode_url(anime, ep), '_blank');
 			});
 	}
+	static anime_exists(name) {
+		return this.get_anime_data(name)
+			.then( resolved => true, error => false );
+	}
 
 }
