@@ -1,7 +1,11 @@
 {
-  "name": "gogoamine-mal-plugin",
+  "name": "watch-mal-chrome-extension",
   "version": "1.0.0",
   "description": "A simple chrome extension which enable you to go to the anime in gogoanime via myanimelist website.",
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/ori155/watch-mal-chrome-extension"
+  },
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --progress",
@@ -36,4 +40,5 @@
     "react-dom": "^15.3.1",
     "url-loader": "^0.5.7"
   }
+
 }
