@@ -6,3 +6,5 @@ lib/
 *.swo
 
 babeled/
+built.crx
+built.pem
